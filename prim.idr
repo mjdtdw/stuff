@@ -8,7 +8,7 @@ f xs prf = "ok"
 main : IO ()
 main = do
   inp <- getLine
-  xs <- pure $ words inp
+  let xs = words inp
   case decEq (length xs) 5 of
     Yes prf => print (f xs prf)
     No _ => print "not ok"
